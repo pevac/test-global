@@ -1,4 +1,7 @@
+import { Link, Switch, Route} from 'react-router-dom'
 import './App.css';
+import Main from './components/Main';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -6,24 +9,32 @@ function App() {
       <header className="App-header">
         <ul className='nav'>
           <li>
-            <a
+            <Link
               className="App-link"
-              href="/main"
+              to="/main"
             >
               Main
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="App-link"
-              href="profile"
+              to="profile"
             >
               Profile
-            </a>
+            </Link>
           </li>
         </ul>
 
       </header>
+      <Switch>
+          <Route path="/main">
+            <Main />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
     </div>
   );
 }
