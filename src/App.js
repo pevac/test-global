@@ -2,6 +2,7 @@ import { Link, Switch, Route} from 'react-router-dom'
 import './App.css';
 import Main from './components/Main';
 import Profile from './components/Profile';
+import Login from './components/Login'
 
 function App() {
   return (
@@ -31,8 +32,11 @@ function App() {
           <Route path="/main">
             <Main />
           </Route>
+      
           <Route path="/profile">
-            <Profile />
+            <Login>
+              <Profile />
+            </Login>
           </Route>
         </Switch>
     </div>
